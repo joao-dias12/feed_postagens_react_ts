@@ -3,7 +3,12 @@ import { useState } from 'react'
 import { Avatar } from './Avatar'
 import styles from './Comment.module.css'
 
-export function Comment(props){
+interface CommentProps {
+    content: string;
+    onDeleteComment:(comment:string) => void; // Entre paranteses eu aviso que a função recebe um parametro string e que retorna vazio(void)
+}
+
+export function Comment(props: CommentProps){
     
     const [LikeCount, setLikeCount] = useState(0);{
  // like count inicial é igual a zero
