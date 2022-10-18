@@ -1,0 +1,15 @@
+.avatar {
+    box-sizing: initial; /* faz com que quando voce adiciona bordar , padding, faz com que a imagem dentro mantenha seu tamanho origial, e o resto cresce para fora(padding , outline , etc */
+    width: 3rem;
+    height: 3rem;
+
+}
+
+.avatarWithBorder {
+    box-sizing: initial; /* faz com que quando voce adiciona bordar , padding, faz com que a imagem dentro mantenha seu tamanho origial, e o resto cresce para fora(padding , outline , etc */
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+    border: 4px solid var(--gray-800);
+    outline: 2px solid var(--green-500);
+}

@@ -1,0 +1,40 @@
+/* ESse Arquivo é para setar o estilo de todos os elementos da aplicação  */
+:root {
+    --white: #ffffff;
+    --gray-100:#e1e1e6;
+    --gray-300: #c4c4cc;
+    --gray-400: #8d8d99;
+    --gray-600: #323238;
+    --gray-700: #29292e;
+    --gray-800: #202024;
+    --gray-900: #121214;
+
+    --green-500: #00875f;
+    --green-300: #00b37e;
+
+    --red-500: #f75a68;
+
+}
+
+:focus {
+    outline: transparent; /* Mudando o a cor de fora do de foco para transparente*/
+    box-sizing:0 0 0 2px var(--green-500); /* Mudando a cor para do focus para green  */
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box; /* Padding marging não vao aumentar e sim vao expremer os elementos para dentro   */
+}
+
+body {
+    background: var(--gray-900);
+    color: var(--gray-300);
+    -webkit-font-smoothing: antialiased; /* em navegadores como chrome, faz com que as fontes sejam mais detalhadas com fontes não padrão */
+}
+
+body, input, textarea, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* 1 rem equivale a 16px no tamanho padrão do chrome, e ai as fontes vão diminuir relativamente*/
+}

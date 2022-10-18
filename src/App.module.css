@@ -1,0 +1,24 @@
+.wrapper{
+    max-width: 70rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    
+    display: grid;
+    grid-template-columns: 256px 1fr; /* largura do profile e do lado a largura do post, o post vai poder ser reduzido mas o profile se mantem sempre */
+    gap: 2rem;
+    align-items: flex-start; /* alinhados sempre para o topo, o padrão é o strecht que acabaria estragando a imagem*/
+}
+
+@media (max-width: 768px) { /* quando a tela for menor que 768 px*/
+    html {
+        font-size: 87.5%;
+    }
+
+}
+
+@media (max-width: 768px) { /* quando a tela for menor que 768 px*/
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+
+}
