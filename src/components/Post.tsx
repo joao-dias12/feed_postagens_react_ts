@@ -1,6 +1,6 @@
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 
 import { Comment } from "./Comment"
 import { Avatar } from "./Avatar"
@@ -15,9 +15,13 @@ interface Author {
     
 }
 
+interface Content{
+    type: 'paragraph'| 'link';
+    content: string;
+}
 interface PostProps {
     author: Author;
-    content: string;
+    content: Content[];
     publishedAt: Date;
 }
 
@@ -35,7 +39,7 @@ export function Post({author, publishedAt, content}:PostProps) {
     addSuffix: true
 })
 
-    function handleCreateNewComment (){
+    function handleCreateNewComment (event: FormEvent){
         event.preventDefault() //Função que retira a necessidade de ser redirecionado para outra pagina
 
         console.log()
@@ -44,17 +48,17 @@ export function Post({author, publishedAt, content}:PostProps) {
         setnewCommentText('');
         }
 
-    function handleNewCommentChange(){
+    function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>){
         event.target.setCustomValidity('') // Avisando que não tem mais erro
         setnewCommentText(event.target.value); //pegando os dados digitados e colocando no comentario
 
     }
 
-    function handleNewCommentInvalid(){
+    function handleNewCommentInvalid(event: InvalidEvent<HTMLTextAreaElement>){
        event.target.setCustomValidity('Esse campo é obrigatório')
     }
 
-    function deleteComment(commentToDelete){
+    function deleteComment(commentToDelete: string){
         // Imutabilidade- No react a gente nunca altera diretamente um estado, a gente cria um novo e compara com o antigo
         const commentsWithoutDeletedOne = comments.filter(comment => {
             return comment != commentToDelete
